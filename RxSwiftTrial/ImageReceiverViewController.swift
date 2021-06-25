@@ -6,17 +6,25 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
+import RxCocoa
 
 class ImageReceiverViewController: UIViewController {
     
-   @IBOutlet weak var imageView: UIImageView?
+   @IBOutlet weak var imageView: UIImageView!
     
-    var imageName: String? = ""
+//    var imageName:
+    var imageName: BehaviorRelay = BehaviorRelay<String>(value: "")
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView?.image = UIImage.init(systemName: imageName ?? "")
+//        imageView?.image = UIImage.init(systemName: imageName ?? "")
+        imageName.map({ name in
+            UIImage.init(systemName: name)
+        }).bind(to: imageView.rx.image).disposed(by: disposeBag)
         
     }
     

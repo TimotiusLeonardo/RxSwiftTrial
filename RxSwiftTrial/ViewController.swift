@@ -60,7 +60,8 @@ class ViewController: UIViewController {
         tableView.rx.modelSelected(Product.self)
             .subscribe(onNext: { productObject in
                 if let imageReceiverVC = self.storyboard?.instantiateViewController(identifier: "imageReceiver") as? ImageReceiverViewController {
-                    imageReceiverVC.imageName = productObject.imageName
+//                    imageReceiverVC.imageName = productObject.imageName
+                    imageReceiverVC.imageName.accept(productObject.imageName)
                     self.navigationController?.pushViewController(imageReceiverVC, animated: true)
                 }
             }).disposed(by: bag)
