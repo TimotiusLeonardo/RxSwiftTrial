@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		442989D4C0313F7E47390F57 /* Pods_RxSwiftTrial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D86F04322B241EA5581CC9 /* Pods_RxSwiftTrial.framework */; };
 		FF6F72E826836521000EC189 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F72E726836521000EC189 /* AppDelegate.swift */; };
 		FF6F72EA26836521000EC189 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F72E926836521000EC189 /* SceneDelegate.swift */; };
 		FF6F72EC26836521000EC189 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F72EB26836521000EC189 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		FF6F72F426836524000EC189 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6F72F226836524000EC189 /* LaunchScreen.storyboard */; };
 		FF6F72FF26836524000EC189 /* RxSwiftTrialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F72FE26836524000EC189 /* RxSwiftTrialTests.swift */; };
 		FF6F730A26836524000EC189 /* RxSwiftTrialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F730926836524000EC189 /* RxSwiftTrialUITests.swift */; };
+		FF6F73182684549A000EC189 /* ImageReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C173D53B995399F90AFA777 /* Pods-RxSwiftTrial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTrial.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftTrial/Pods-RxSwiftTrial.release.xcconfig"; sourceTree = "<group>"; };
+		78D86F04322B241EA5581CC9 /* Pods_RxSwiftTrial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTrial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDF8F6540F9C0721B0649348 /* Pods-RxSwiftTrial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTrial.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftTrial/Pods-RxSwiftTrial.debug.xcconfig"; sourceTree = "<group>"; };
 		FF6F72E426836521000EC189 /* RxSwiftTrial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTrial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6F72E726836521000EC189 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6F72E926836521000EC189 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,8 @@
 		FF6F730526836524000EC189 /* RxSwiftTrialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftTrialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6F730926836524000EC189 /* RxSwiftTrialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftTrialUITests.swift; sourceTree = "<group>"; };
 		FF6F730B26836524000EC189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageReceiverViewController.swift; sourceTree = "<group>"; };
+		FF6F731926848DFF000EC189 /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				442989D4C0313F7E47390F57 /* Pods_RxSwiftTrial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +84,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B192145E78ABDBBCE0D3B12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDF8F6540F9C0721B0649348 /* Pods-RxSwiftTrial.debug.xcconfig */,
+				6C173D53B995399F90AFA777 /* Pods-RxSwiftTrial.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2ADD374236856ED488E6275C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78D86F04322B241EA5581CC9 /* Pods_RxSwiftTrial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF6F72DB26836521000EC189 = {
 			isa = PBXGroup;
 			children = (
+				FF6F731926848DFF000EC189 /* RxSwiftPlayground.playground */,
 				FF6F72E626836521000EC189 /* RxSwiftTrial */,
 				FF6F72FD26836524000EC189 /* RxSwiftTrialTests */,
 				FF6F730826836524000EC189 /* RxSwiftTrialUITests */,
 				FF6F72E526836521000EC189 /* Products */,
+				0B192145E78ABDBBCE0D3B12 /* Pods */,
+				2ADD374236856ED488E6275C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +134,7 @@
 				FF6F72F026836524000EC189 /* Assets.xcassets */,
 				FF6F72F226836524000EC189 /* LaunchScreen.storyboard */,
 				FF6F72F526836524000EC189 /* Info.plist */,
+				FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */,
 			);
 			path = RxSwiftTrial;
 			sourceTree = "<group>";
@@ -135,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF6F730E26836524000EC189 /* Build configuration list for PBXNativeTarget "RxSwiftTrial" */;
 			buildPhases = (
+				48B2A8995E2A0567511DBC34 /* [CP] Check Pods Manifest.lock */,
 				FF6F72E026836521000EC189 /* Sources */,
 				FF6F72E126836521000EC189 /* Frameworks */,
 				FF6F72E226836521000EC189 /* Resources */,
+				196AC68B112565371E15ACF1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,12 +284,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		196AC68B112565371E15ACF1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTrial/Pods-RxSwiftTrial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTrial/Pods-RxSwiftTrial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftTrial/Pods-RxSwiftTrial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48B2A8995E2A0567511DBC34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwiftTrial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FF6F72E026836521000EC189 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FF6F72EC26836521000EC189 /* ViewController.swift in Sources */,
+				FF6F73182684549A000EC189 /* ImageReceiverViewController.swift in Sources */,
 				FF6F72E826836521000EC189 /* AppDelegate.swift in Sources */,
 				FF6F72EA26836521000EC189 /* SceneDelegate.swift in Sources */,
 			);
@@ -433,6 +507,7 @@
 		};
 		FF6F730F26836524000EC189 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDF8F6540F9C0721B0649348 /* Pods-RxSwiftTrial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +527,7 @@
 		};
 		FF6F731026836524000EC189 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C173D53B995399F90AFA777 /* Pods-RxSwiftTrial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
