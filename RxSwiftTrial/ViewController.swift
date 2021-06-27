@@ -9,35 +9,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-struct Product {
-    let imageName: String
-    let title: String
-}
-
-struct ProductViewModel {
-    var items = PublishSubject<[Product]>()
-    
-    func fetchItems() {
-        let products =  [
-            Product(imageName: "house", title: "Home"),
-            Product(imageName: "gear", title: "Settings"),
-            Product(imageName: "person.circle", title: "Profile"),
-            Product(imageName: "airplane", title: "Flights"),
-            Product(imageName: "bell", title: "Activity")
-        ]
-        
-        items.onNext(products)
-        items.onCompleted()
-    }
-}
-
 class ViewController: UIViewController {
     
-    private let tableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     private var viewModel = ProductViewModel()
     private var bag = DisposeBag()
@@ -46,30 +21,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         tableView.frame = view.bounds
+        tableView.rx.setDelegate(self).disposed(by: bag)
         bindTableData()
     }
     
     private func bindTableData() {
         // Bind items to table
-        viewModel.items.bind(to: tableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, model, cell in
-            cell.textLabel?.text = model.title
-            cell.imageView?.image = UIImage(systemName: model.imageName)
+        searchBar.rx.text.orEmpty
+            .throttle(.seconds(2), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .map({ query in
+                self.viewModel.items.value.filter ({ product in
+                    query.isEmpty || product.title.lowercased().contains(query.lowercased())
+                })
+            }).bind(to: tableView.rx.items(cellIdentifier: "foodCell", cellType: ProductTableViewCell.self)) { row, model, cell in
+            cell.productNameLabel.text = model.title
+            cell.productImageView.image = UIImage(named: model.imageName)
         }.disposed(by: bag)
         
         // Bind a model selected handler
         tableView.rx.modelSelected(Product.self)
             .subscribe(onNext: { productObject in
                 if let imageReceiverVC = self.storyboard?.instantiateViewController(identifier: "imageReceiver") as? ImageReceiverViewController {
-//                    imageReceiverVC.imageName = productObject.imageName
                     imageReceiverVC.imageName.accept(productObject.imageName)
                     self.navigationController?.pushViewController(imageReceiverVC, animated: true)
                 }
             }).disposed(by: bag)
-        
-        //fetch items
-        viewModel.fetchItems()
     }
 
 
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
 }
 

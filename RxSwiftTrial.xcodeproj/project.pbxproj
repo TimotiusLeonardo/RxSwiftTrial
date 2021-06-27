@@ -17,6 +17,8 @@
 		FF6F72FF26836524000EC189 /* RxSwiftTrialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F72FE26836524000EC189 /* RxSwiftTrialTests.swift */; };
 		FF6F730A26836524000EC189 /* RxSwiftTrialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F730926836524000EC189 /* RxSwiftTrialUITests.swift */; };
 		FF6F73182684549A000EC189 /* ImageReceiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */; };
+		FF9F2B692688BD4900E4FD6B /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF9F2B682688BD4900E4FD6B /* Product.swift */; };
+		FFD63FD1268618AA00B4F6EB /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD63FD0268618AA00B4F6EB /* ProductTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		FF6F730B26836524000EC189 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageReceiverViewController.swift; sourceTree = "<group>"; };
 		FF6F731926848DFF000EC189 /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF9F2B682688BD4900E4FD6B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		FFD63FD0268618AA00B4F6EB /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 				FF6F72F226836524000EC189 /* LaunchScreen.storyboard */,
 				FF6F72F526836524000EC189 /* Info.plist */,
 				FF6F73172684549A000EC189 /* ImageReceiverViewController.swift */,
+				FFD63FD0268618AA00B4F6EB /* ProductTableViewCell.swift */,
+				FF9F2B682688BD4900E4FD6B /* Product.swift */,
 			);
 			path = RxSwiftTrial;
 			sourceTree = "<group>";
@@ -333,8 +339,10 @@
 			files = (
 				FF6F72EC26836521000EC189 /* ViewController.swift in Sources */,
 				FF6F73182684549A000EC189 /* ImageReceiverViewController.swift in Sources */,
+				FFD63FD1268618AA00B4F6EB /* ProductTableViewCell.swift in Sources */,
 				FF6F72E826836521000EC189 /* AppDelegate.swift in Sources */,
 				FF6F72EA26836521000EC189 /* SceneDelegate.swift in Sources */,
+				FF9F2B692688BD4900E4FD6B /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

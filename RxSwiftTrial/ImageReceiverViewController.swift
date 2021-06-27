@@ -23,7 +23,7 @@ class ImageReceiverViewController: UIViewController {
         
 //        imageView?.image = UIImage.init(systemName: imageName ?? "")
         imageName.map({ name in
-            UIImage.init(systemName: name)
+            UIImage.init(named: name)
         }).bind(to: imageView.rx.image).disposed(by: disposeBag)
         
     }

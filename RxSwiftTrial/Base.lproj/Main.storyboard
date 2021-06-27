@@ -15,10 +15,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pBy-Yb-cOL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Rc-fu-9oA">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="100" id="4dL-3g-ndE" customClass="ProductTableViewCell" customModule="RxSwiftTrial" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4dL-3g-ndE" id="Zpo-mj-KvS">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pBy-Yb-cOL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9WS-PN-ps6"/>
+                            <constraint firstItem="pBy-Yb-cOL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ezc-H4-6zx"/>
+                            <constraint firstItem="9Rc-fu-9oA" firstAttribute="top" secondItem="pBy-Yb-cOL" secondAttribute="bottom" id="HVF-CY-qeZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Rc-fu-9oA" secondAttribute="bottom" id="SpX-hp-F30"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Rc-fu-9oA" secondAttribute="trailing" id="UoZ-ik-QiD"/>
+                            <constraint firstItem="9Rc-fu-9oA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y6I-0M-hc5"/>
+                            <constraint firstItem="pBy-Yb-cOL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lbH-4G-GVP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UEZ-jP-7di"/>
+                    <connections>
+                        <outlet property="searchBar" destination="pBy-Yb-cOL" id="hhz-SA-cuy"/>
+                        <outlet property="tableView" destination="9Rc-fu-9oA" id="qPS-qM-Q70"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -32,13 +65,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ZK-eM-K6z">
-                                <rect key="frame" x="20" y="77" width="374" height="246"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ZK-eM-K6z">
+                                <rect key="frame" x="16" y="325" width="382" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1ZK-eM-K6z" secondAttribute="height" multiplier="191:123" id="Ls8-bg-ktd"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KEW-Q2-Szp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1ZK-eM-K6z" firstAttribute="centerY" secondItem="kB6-JA-kUL" secondAttribute="centerY" id="NcE-u3-LTl"/>
+                            <constraint firstItem="1ZK-eM-K6z" firstAttribute="leading" secondItem="KEW-Q2-Szp" secondAttribute="leading" constant="16" id="QML-4Y-cBr"/>
+                            <constraint firstItem="KEW-Q2-Szp" firstAttribute="trailing" secondItem="1ZK-eM-K6z" secondAttribute="trailing" constant="16" id="XHP-dA-ssp"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="1ZK-eM-K6z" id="NyB-Zx-SLj"/>
