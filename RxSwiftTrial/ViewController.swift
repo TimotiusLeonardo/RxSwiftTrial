@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,21 @@ class ViewController: UIViewController {
     
     private var viewModel = ProductViewModel()
     private var bag = DisposeBag()
+    
+    let tableItemsSectioned = BehaviorRelay.init(value: [
+//        SectionModel.init(header: "Main Courses", items: <#T##[Product]#>)
+//        SectionModel.init(header: "Desert", items: <#T##[Product]#>)
+    ])
+    
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionModel> { ds, tableView, indexPath, item in
+        guard let cell: ProductTableViewCell = tableView.dequeueReusableCell(withIdentifier: "foodCell", for: indexPath) as? ProductTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.productNameLabel.text = item.title
+        cell.productImageView.image = UIImage(named: item.imageName)
+        
+        return cell
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
