@@ -1,0 +1,10 @@
+workflows:
+  rxSwiftTrial-workflow:
+    name: rxSwiftTrial Pipeline
+    scripts:
+       - name: CICD Startup
+       scipt: echo "welcome to ci cd setup"
+    publishing:
+      email:
+      recipients:
+        - lionato14@gmail.com  
