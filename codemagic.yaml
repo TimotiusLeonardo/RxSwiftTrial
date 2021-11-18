@@ -3,7 +3,7 @@ workflows:
     name: rxSwiftTrial Pipeline
     scripts:
         - name: CICD Startup
-          scipt: echo "welcome to ci cd setup"
+          script: echo "welcome to ci cd setup"
     publishing:
       email:
         recipients:
