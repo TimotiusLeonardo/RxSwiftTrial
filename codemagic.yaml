@@ -4,6 +4,8 @@ workflows:
     scripts:
         - name: CICD Startup
           script: echo "welcome to ci cd setup"
+        - name: Build rxSwift
+          script: xcodebuild build -workspace "RxSwiftTrial.xcworkspace" -scheme "RxSwiftTrial" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
     publishing:
       email:
         recipients:
