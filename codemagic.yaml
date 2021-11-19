@@ -6,6 +6,13 @@ workflows:
           script: echo "welcome to ci cd setup"
         - name: Build rxSwift
           script: xcodebuild build -workspace "RxSwiftTrial.xcworkspace" -scheme "RxSwiftTrial" CODE_SIGN_INDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+        - name: iOS test
+          script: |
+            xcode-project run-tests \
+            --workspace RxSwiftTrial.xcworkspace \
+            --scheme RxSwiftTrial \
+            --device "iPhone 11"
+  test_report: build/ios/test/*.xml
     publishing:
       email:
         recipients:
