@@ -12,7 +12,7 @@ workflows:
             --workspace RxSwiftTrial.xcworkspace \
             --scheme RxSwiftTrial \
             --device "iPhone 11"
-  test_report: build/ios/test/*.xml
+          test_report: build/ios/test/*.xml
     publishing:
       email:
         recipients:
